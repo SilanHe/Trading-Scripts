@@ -11,7 +11,7 @@ import time
 def get_watchlist():
     with open("watchlist.txt", "r") as f:    
         content = f.readlines()
-    return content
+    return [c[:-1] for c in content]
 
 def sma(data, window):
     """
@@ -126,7 +126,6 @@ def generate_graph(data,macd_data,signal_line,ticker):
 
 	fig.savefig('%s-%s.png' % (ticker,date), dpi=100)
 
-	plt.show()
 def get_intersection(macd,signal): 
     for i in range(2,100):
         # take 2 points from each the macd line and the signal line and check for intersection
@@ -155,20 +154,18 @@ k = dict()
 
 for t in tickers:
 	# get the data from the api
-	try:
-		data, meta_data = ts.get_daily(t, outputsize='compact')
-		macd_data, macd_meta_data = ti.get_macd(t,fastperiod=5,slowperiod=35,signalperiod=5)
-		#calculate custom signal line from the macd
-		signal_line = [ema(list(macd_data['MACD'][-200:i]),5) for i in range(-100,0)]
+	print(t)
 
-		intersect = get_intersection(list(macd_data['MACD']),signal_line)
-		slope = get_slope(intersect,list(macd_data['MACD']))
-		k[t] = slope
+	data, meta_data = ts.get_daily(t, outputsize='compact')
+	macd_data, macd_meta_data = ti.get_macd(t,fastperiod=5,slowperiod=35,signalperiod=5)
+	#calculate custom signal line from the macd
+	signal_line = [ema(list(macd_data['MACD'][-200:i]),5) for i in range(-100,0)]
 
-		generate_graph(data,macd_data,signal_line,ticker)
+	intersect = get_intersection(list(macd_data['MACD']),signal_line)
+	slope = get_slope(intersect,list(macd_data['MACD']))
+	k[t] = slope
 
-	except:
-		print('ERROR: Must have exceeded number of requests per minute.')
+	generate_graph(data,macd_data,signal_line,t)
 
 
 	#not go over the threshold number of request a minute
