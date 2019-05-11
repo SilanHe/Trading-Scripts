@@ -9,54 +9,56 @@ from matplotlib.pyplot import figure
 import time
 
 def get_watchlist():
-    with open("watchlist.txt", "r") as f:    
-        content = f.readlines()
-    return [c[:-1] for c in content]
+	with open("watchlist.txt", "r") as f:    
+		content = f.readlines()
+	return [c[:-1] for c in content]
 
 def sma(data, window):
-    """
-    Calculates Simple Moving Average
-    http://fxtrade.oanda.com/learn/forex-indicators/simple-moving-average
-    """
-    if len(data) < window:
-        return None
-    return sum(data[-window:]) / float(window)
+	"""
+	Calculates Simple Moving Average
+	http://fxtrade.oanda.com/learn/forex-indicators/simple-moving-average
+	"""
+	if len(data) < window:
+		return None
+	return sum(data[-window:]) / float(window)
 
 def ema(data, window):
-    if len(data) < 2 * window:
-        raise ValueError("data is too short")
-    c = 2.0 / (window + 1)
-    current_ema = sma(data[-window*2:-window], window)
-    for value in data[-window:]:
-        current_ema = (c * value) + ((1 - c) * current_ema)
-    return current_ema
+	if len(data) < 2 * window:
+		raise ValueError("data is too short")
+	c = 2.0 / (window + 1)
+	current_ema = sma(data[-window*2:-window], window)
+	for value in data[-window:]:
+		current_ema = (c * value) + ((1 - c) * current_ema)
+	return current_ema
 
 def get_slope(intersect,macd):
-    if intersect[1] == -1:
-        return 'Fresh Inversion'
-    if intersect[0] == None:
-    	return 'No Inversion'
-    
-    #check slope to see how bulish the inversion or bearish the inversion is
-    macd_1 = macd[intersect[1]]
-    macd_2 = macd[-1]
-    
-    slope = (macd_1 - macd_2)/(-1+intersect[1])
-    
-    if slope >= 1:
-        return 'Strong Bullish Inversion'
-    elif slope >= 0.4:
-        return 'Bullish Inversion'
-    elif slope > 0:
-        return 'Weak Bullish Inversion'
-    elif slope == 0:
-        return 'Neutral Inversion'
-    elif slope > -0.4:
-        return 'Weak Bearish Inversion'
-    elif slope > -1:
-        return 'Bearish Inversion'
-    elif slope <= -1:
-        return 'Strong Bearish Inversion'
+
+	if intersect == None:
+		return 'No Inversion'
+	elif intersect[1] == -1:
+		return 'Fresh Inversion'
+	
+	
+	#check slope to see how bulish the inversion or bearish the inversion is
+	macd_1 = macd[intersect[1]]
+	macd_2 = macd[-1]
+	
+	slope = (macd_1 - macd_2)/(-1+intersect[1])
+	
+	if slope >= 1:
+		return 'Strong Bullish Inversion'
+	elif slope >= 0.4:
+		return 'Bullish Inversion'
+	elif slope > 0:
+		return 'Weak Bullish Inversion'
+	elif slope == 0:
+		return 'Neutral Inversion'
+	elif slope > -0.4:
+		return 'Weak Bearish Inversion'
+	elif slope > -1:
+		return 'Bearish Inversion'
+	elif slope <= -1:
+		return 'Strong Bearish Inversion'
 
 def generate_graph(data,macd_data,signal_line,ticker):
 	# Get json object with the intraday data and another with  the call's metadata
@@ -84,10 +86,10 @@ def generate_graph(data,macd_data,signal_line,ticker):
 
 	# Turn off the display of all ticks.
 	ax1.tick_params(which='both', # Options for both major and minor ticks
-	                top='off', # turn off top ticks
-	                left='off', # turn off left ticks
-	                right='off',  # turn off right ticks
-	                bottom='off') # turn off bottom ticks
+					top='off', # turn off top ticks
+					left='off', # turn off left ticks
+					right='off',  # turn off right ticks
+					bottom='off') # turn off bottom ticks
 
 	ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
 
@@ -112,10 +114,10 @@ def generate_graph(data,macd_data,signal_line,ticker):
 
 	# Turn off the display of all ticks.
 	ax2.tick_params(which='both', # Options for both major and minor ticks
-	                top='off', # turn off top ticks
-	                left='off', # turn off left ticks
-	                right='off',  # turn off right ticks
-	                bottom='off') # turn off bottom ticksf
+					top='off', # turn off top ticks
+					left='off', # turn off left ticks
+					right='off',  # turn off right ticks
+					bottom='off') # turn off bottom ticksf
 
 	ax2.xaxis.set_major_locator(plt.MaxNLocator(20))
 
@@ -126,23 +128,25 @@ def generate_graph(data,macd_data,signal_line,ticker):
 
 	fig.savefig('%s-%s.png' % (ticker,date), dpi=100)
 
+	close()
+
 def get_intersection(macd,signal): 
-    for i in range(2,100):
-        # take 2 points from each the macd line and the signal line and check for intersection
-        index = i * -1
-        macd_1 = macd[index-1]
-        macd_2 = macd[index]
+	for i in range(2,100):
+		# take 2 points from each the macd line and the signal line and check for intersection
+		index = i * -1
+		macd_1 = macd[index-1]
+		macd_2 = macd[index]
 
-        signal_1 = signal[index-1]
-        signal_2 = signal[index]
+		signal_1 = signal[index-1]
+		signal_2 = signal[index]
 
-        if macd_1 <= signal_1 and macd_2 >= signal_2 and macd_2 >= macd_1:
-            #bullish inversion
-            return (1,index)
-        elif macd_1 >= signal_1 and macd_2 <= signal_2 and macd_2 <= macd_1:
-            #bearish inversion
-            return (-1,index)
-    return None
+		if macd_1 <= signal_1 and macd_2 >= signal_2 and macd_2 >= macd_1:
+			#bullish inversion
+			return (1,index)
+		elif macd_1 >= signal_1 and macd_2 <= signal_2 and macd_2 <= macd_1:
+			#bearish inversion
+			return (-1,index)
+	return None
 
 
 ts = TimeSeries(key='HFHLQNBPIUBWH9UF', output_format='pandas')
@@ -161,15 +165,15 @@ for t in tickers:
 	#calculate custom signal line from the macd
 	signal_line = [ema(list(macd_data['MACD'][-200:i]),5) for i in range(-100,0)]
 
+	generate_graph(data,macd_data,signal_line,t)
+
 	intersect = get_intersection(list(macd_data['MACD']),signal_line)
 	slope = get_slope(intersect,list(macd_data['MACD']))
 	k[t] = slope
 
-	generate_graph(data,macd_data,signal_line,t)
-
 
 	#not go over the threshold number of request a minute
-	time.sleep(20)
+	time.sleep(30)
 
 #write the generated data to file for easy reading
 # Filename to append
