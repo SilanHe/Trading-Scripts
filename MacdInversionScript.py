@@ -155,43 +155,47 @@ ti = TechIndicators(key='HFHLQNBPIUBWH9UF', output_format='pandas')
 tickers = get_watchlist()
 
 k = dict()
+try:
 
-for t in tickers:
-	# get the data from the api
-	print(t)
+	for t in tickers:
+		# get the data from the api
+		print(t)
 
-	data, meta_data = ts.get_daily(t, outputsize='compact')
-	macd_data, macd_meta_data = ti.get_macd(t,fastperiod=5,slowperiod=35,signalperiod=5)
-	#calculate custom signal line from the macd
-	signal_line = [ema(list(macd_data['MACD'][-200:i]),5) for i in range(-100,0)]
+		data, meta_data = ts.get_daily(t, outputsize='compact')
+		macd_data, macd_meta_data = ti.get_macd(t,fastperiod=5,slowperiod=35,signalperiod=5)
+		#calculate custom signal line from the macd
+		signal_line = [ema(list(macd_data['MACD'][-200:i]),5) for i in range(-100,0)]
 
-	generate_graph(data,macd_data,signal_line,t)
+		generate_graph(data,macd_data,signal_line,t)
 
-	intersect = get_intersection(list(macd_data['MACD']),signal_line)
-	slope = get_slope(intersect,list(macd_data['MACD']))
-	k[t] = slope
+		intersect = get_intersection(list(macd_data['MACD']),signal_line)
+		slope = get_slope(intersect,list(macd_data['MACD']))
+		k[t] = slope
 
 
-	#not go over the threshold number of request a minute
-	time.sleep(30)
+		#not go over the threshold number of request a minute
+		time.sleep(30)
+except KeyError:
+	print "ERROR: KeyError"
 
-#write the generated data to file for easy reading
-# Filename to append
-date = datetime.today().strftime('%Y-%m-%d')
+finally:
+	#write the generated data to file for easy reading
+	# Filename to append
+	date = datetime.today().strftime('%Y-%m-%d')
 
-filename = "watchlist-%s.txt" % date
+	filename = "watchlist-%s.txt" % date
 
-# The 'a' flag tells Python to keep the file contents
-# and append (add line) at the end of the file.
-myfile = open(filename, 'w')
+	# The 'a' flag tells Python to keep the file contents
+	# and append (add line) at the end of the file.
+	myfile = open(filename, 'w')
 
-#convert my data to string
-# sorted_k = sorted(k.items(), key=lambda kv: kv[1])
-content = '\n'.join("{!s}:{!s}".format(key,val) for (key,val) in k.items())
+	#convert my data to string
+	# sorted_k = sorted(k.items(), key=lambda kv: kv[1])
+	content = '\n'.join("{!s}:{!s}".format(key,val) for (key,val) in k.items())
 
-# Add the line
-myfile.write(content)
+	# Add the line
+	myfile.write(content)
 
-# Close the file
-myfile.close()
+	# Close the file
+	myfile.close()
 
