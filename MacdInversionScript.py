@@ -128,7 +128,7 @@ def generate_graph(data,macd_data,signal_line,ticker):
 
 	fig.savefig('%s-%s.png' % (ticker,date), dpi=100)
 
-	close()
+	plt.close()
 
 def get_intersection(macd,signal): 
 	for i in range(2,100):
