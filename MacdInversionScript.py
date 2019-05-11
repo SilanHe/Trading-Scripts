@@ -176,7 +176,7 @@ try:
 		#not go over the threshold number of request a minute
 		time.sleep(30)
 except KeyError:
-	print "ERROR: KeyError"
+	print("ERROR: KeyError")
 
 finally:
 	#write the generated data to file for easy reading
