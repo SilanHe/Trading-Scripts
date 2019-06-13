@@ -1,0 +1,45 @@
+XAU.TO:Weak Bullish Inversion
+GPL:Weak Bullish Inversion
+TGODF:Weak Bearish Inversion
+KODK:Weak Bullish Inversion
+APS:No Inversion
+AMRH:Weak Bullish Inversion
+ARC:Weak Bullish Inversion
+FUV:Weak Bullish Inversion
+EFOI:Weak Bullish Inversion
+ROX:Weak Bullish Inversion
+LLNW:Weak Bearish Inversion
+DHXM:Weak Bullish Inversion
+CHK:Weak Bullish Inversion
+DNN:Weak Bullish Inversion
+HEXO:Weak Bullish Inversion
+ACB.TO:Weak Bullish Inversion
+MCIG:Weak Bullish Inversion
+ONDK:Weak Bullish Inversion
+PWF.TO:Weak Bullish Inversion
+SSRM.TO:Weak Bullish Inversion
+SMT.TO:Weak Bearish Inversion
+MYA.TO:Weak Bearish Inversion
+PAAS.TO:Weak Bullish Inversion
+YRI:Weak Bullish Inversion
+BDRBF:Weak Bullish Inversion
+BA:Bullish Inversion
+ARTX:Weak Bullish Inversion
+AMD:Weak Bullish Inversion
+NTDOY:Weak Bearish Inversion
+AAPL:Strong Bullish Inversion
+MSFT:Bullish Inversion
+KNTNF:Weak Bearish Inversion
+MFC.TO:Weak Bullish Inversion
+CVE.TO:Weak Bullish Inversion
+VII.TO:Weak Bearish Inversion
+HBM.TO:Weak Bullish Inversion
+CRON.TO:Weak Bullish Inversion
+HSE.TO:Weak Bullish Inversion
+ECA.TO:Weak Bearish Inversion
+SES.TO:Weak Bullish Inversion
+TRST.TO:Weak Bullish Inversion
+TA.TO:Weak Bearish Inversion
+ARX.TO:Weak Bearish Inversion
+TGOD.TO:Weak Bearish Inversion
+APHA.TO:Weak Bullish Inversion
