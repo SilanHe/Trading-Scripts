@@ -48,19 +48,19 @@ def get_slope(intersect,macd):
 	slope = (macd_1 - macd_2)/(-1+intersect[1])
 	
 	if slope >= 1:
-		return 'Strong Bullish Inversion. Days since: ' + time_since
+		return 'Strong Bullish Inversion. Days since: ' + str(time_since)
 	elif slope >= 0.2:
-		return 'Bullish Inversion. Days since: ' + time_since
+		return 'Bullish Inversion. Days since: ' + str(time_since)
 	elif slope > 0:
-		return 'Weak Bullish Inversion. Days since: ' + time_since
+		return 'Weak Bullish Inversion. Days since: ' + str(time_since)
 	elif slope == 0:
-		return 'Neutral Inversion. Days since: ' + time_since
+		return 'Neutral Inversion. Days since: ' + str(time_since)
 	elif slope > -0.2:
-		return 'Weak Bearish Inversion. Days since: ' + time_since
+		return 'Weak Bearish Inversion. Days since: ' + str(time_since)
 	elif slope > -1:
-		return 'Bearish Inversion. Days since: ' + time_since
+		return 'Bearish Inversion. Days since: ' + str(time_since)
 	elif slope <= -1:
-		return 'Strong Bearish Inversion. Days since: ' + time_since
+		return 'Strong Bearish Inversion. Days since: ' + str(time_since)
 
 def generate_graph(data,macd_data,signal_line,ticker):
 	# Get json object with the intraday data and another with  the call's metadata
