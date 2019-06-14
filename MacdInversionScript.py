@@ -35,8 +35,6 @@ def get_slope(intersect,macd):
 
 	if intersect == None:
 		return 'No Inversion'
-	elif intersect[1] == -1:
-		return 'Fresh Inversion'
 	
 	#check to see how recent the inversion is
 	time_since = len(macd) - intersect[1]
@@ -45,7 +43,9 @@ def get_slope(intersect,macd):
 	macd_1 = macd[intersect[1]]
 	macd_2 = macd[-1]
 	
-	slope = (macd_1 - macd_2)/(-1+intersect[1])
+	slope = (macd_1 - macd_2)/(time_since)
+
+	print(intersect,time_since,intersect[1])
 	
 	if slope >= 1:
 		return 'Strong Bullish Inversion. Days since: ' + str(time_since)
@@ -96,7 +96,7 @@ def generate_graph(data,macd_data,signal_line,ticker):
 	ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
 
 	# the third plot under
-	ax2.plot(macd_data['MACD'][-100:],label='macd')
+	ax2.plot(macd_data['MACD'],label='macd')
 	ax2.plot(signal_line,label='signal line')
 	plt.xticks(fontsize=8, rotation=30)
 	plt.grid(True)
@@ -133,21 +133,20 @@ def generate_graph(data,macd_data,signal_line,ticker):
 	plt.close()
 
 def get_intersection(macd,signal): 
-	for i in range(2,100):
+	for i in range(len(signal)-1,0,-1):
 		# take 2 points from each the macd line and the signal line and check for intersection
-		index = i * -1
-		macd_1 = macd[index-1]
-		macd_2 = macd[index]
+		macd_1 = macd[i-1]
+		macd_2 = macd[i]
 
-		signal_1 = signal[index-1]
-		signal_2 = signal[index]
+		signal_1 = signal[i-1]
+		signal_2 = signal[i]
 
 		if macd_1 <= signal_1 and macd_2 >= signal_2 and macd_2 >= macd_1:
 			#bullish inversion
-			return (1,index)
+			return (1,i)
 		elif macd_1 >= signal_1 and macd_2 <= signal_2 and macd_2 <= macd_1:
 			#bearish inversion
-			return (-1,index)
+			return (-1,i)
 	return None
 
 
@@ -166,12 +165,12 @@ try:
 		data, meta_data = ts.get_daily(t, outputsize='compact')
 		macd_data, macd_meta_data = ti.get_macd(t,fastperiod=5,slowperiod=35,signalperiod=5)
 		#calculate custom signal line from the macd
-		signal_line = [ema(list(macd_data['MACD'][-200:i]),5) for i in range(-100,0)]
+		signal_line = [ema(list(macd_data['MACD'][-200+i:i]),5) for i in range(-100,0)]
 
 		generate_graph(data,macd_data,signal_line,t)
 
-		intersect = get_intersection(list(macd_data['MACD']),signal_line)
-		slope = get_slope(intersect,list(macd_data['MACD']))
+		intersect = get_intersection(list(macd_data['MACD'][-100:]),signal_line)
+		slope = get_slope(intersect,list(macd_data['MACD'][-100:]))
 		k[t] = slope
 
 
