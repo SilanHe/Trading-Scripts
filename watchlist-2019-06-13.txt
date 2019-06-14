@@ -42,6 +42,6 @@ TA.TO:Weak Bullish Inversion. Days since: 4898
 ARX.TO:Weak Bearish Inversion. Days since: 4905
 TGOD.TO:Weak Bearish Inversion. Days since: 255
 APHA.TO:Weak Bullish Inversion. Days since: 373
-VFF.TO:Weak Bearish Inversion. Days since: 3863
+VFF.TO:Weak Bearish Inversion. Days since: 329
 SQQQ:Strong Bearish Inversion. Days since: 2318
 YEXT:Bullish Inversion. Days since: 511

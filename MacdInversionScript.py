@@ -39,7 +39,7 @@ def get_slope(intersect,macd):
 		return 'Fresh Inversion'
 	
 	#check to see how recent the inversion is
-	time_since = len(macd) - intersect[-1]
+	time_since = len(macd) - intersect[1]
 	
 	#check slope to see how bulish the inversion or bearish the inversion is
 	macd_1 = macd[intersect[1]]
