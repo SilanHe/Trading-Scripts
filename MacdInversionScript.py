@@ -96,7 +96,7 @@ def generate_graph(data,macd_data,signal_line,ticker):
 	ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
 
 	# the third plot under
-	ax2.plot(macd_data['MACD'],label='macd')
+	ax2.plot(macd_data['MACD'][-100:],label='macd')
 	ax2.plot(signal_line,label='signal line')
 	plt.xticks(fontsize=8, rotation=30)
 	plt.grid(True)

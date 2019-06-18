@@ -1,0 +1,47 @@
+XAU.TO:Weak Bullish Inversion. Days since: 3
+GPL:Weak Bearish Inversion. Days since: 11
+TGODF:Weak Bullish Inversion. Days since: 13
+KODK:Weak Bearish Inversion. Days since: 5
+AMRH:Weak Bullish Inversion. Days since: 3
+ARC:Weak Bearish Inversion. Days since: 10
+FUV:Weak Bearish Inversion. Days since: 7
+EFOI:Weak Bearish Inversion. Days since: 6
+ROX:Weak Bearish Inversion. Days since: 6
+LLNW:Weak Bullish Inversion. Days since: 11
+DHXM:Neutral Inversion. Days since: 1
+CHK:Weak Bearish Inversion. Days since: 6
+DNN:Weak Bearish Inversion. Days since: 12
+HEXO:Weak Bullish Inversion. Days since: 2
+ACB.TO:Weak Bearish Inversion. Days since: 5
+MCIG:Weak Bearish Inversion. Days since: 6
+ONDK:Weak Bearish Inversion. Days since: 8
+PWF.TO:Weak Bullish Inversion. Days since: 3
+SSRM.TO:Weak Bearish Inversion. Days since: 17
+SMT.TO:Weak Bullish Inversion. Days since: 5
+MYA.TO:Weak Bullish Inversion. Days since: 14
+PAAS.TO:Weak Bearish Inversion. Days since: 14
+YRI:Weak Bearish Inversion. Days since: 2
+BDRBF:Weak Bearish Inversion. Days since: 8
+BA:Bearish Inversion. Days since: 8
+ARTX:Weak Bearish Inversion. Days since: 7
+AMD:Neutral Inversion. Days since: 1
+NTDOY:Bullish Inversion. Days since: 4
+AAPL:Strong Bearish Inversion. Days since: 9
+MSFT:Bearish Inversion. Days since: 7
+KNTNF:Weak Bullish Inversion. Days since: 6
+MFC.TO:Weak Bullish Inversion. Days since: 3
+CVE.TO:Weak Bearish Inversion. Days since: 6
+VII.TO:Neutral Inversion. Days since: 1
+HBM.TO:Weak Bearish Inversion. Days since: 15
+CRON.TO:Neutral Inversion. Days since: 1
+HSE.TO:Weak Bearish Inversion. Days since: 12
+ECA.TO:Neutral Inversion. Days since: 1
+SES.TO:Weak Bearish Inversion. Days since: 7
+TRST.TO:Weak Bearish Inversion. Days since: 6
+TA.TO:Weak Bearish Inversion. Days since: 2
+ARX.TO:Weak Bullish Inversion. Days since: 12
+TGOD.TO:Weak Bullish Inversion. Days since: 6
+APHA.TO:Neutral Inversion. Days since: 1
+VFF.TO:Weak Bullish Inversion. Days since: 3
+SQQQ:Strong Bullish Inversion. Days since: 7
+YEXT:Bearish Inversion. Days since: 5
