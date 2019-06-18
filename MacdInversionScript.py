@@ -43,7 +43,7 @@ def get_slope(intersect,macd):
 	macd_1 = macd[intersect[1]]
 	macd_2 = macd[-1]
 	
-	slope = (macd_1 - macd_2)/(time_since)
+	slope = (macd_2 - macd_1)/(time_since)
 
 	print(intersect,time_since,intersect[1])
 	
