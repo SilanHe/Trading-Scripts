@@ -1,0 +1,47 @@
+XAU.TO:Weak Bullish Inversion. Days since: 2
+GPL:Weak Bullish Inversion. Days since: 14
+TGODF:Neutral Inversion. Days since: 1
+KODK:Weak Bullish Inversion. Days since: 8
+AMRH:Weak Bullish Inversion. Days since: 3
+ARC:Neutral Inversion. Days since: 2
+FUV:Weak Bullish Inversion. Days since: 10
+EFOI:Weak Bullish Inversion. Days since: 9
+ROX:Weak Bullish Inversion. Days since: 9
+LLNW:Neutral Inversion. Days since: 1
+DHXM:Weak Bearish Inversion. Days since: 4
+CHK:Weak Bullish Inversion. Days since: 12
+DNN:Weak Bearish Inversion. Days since: 3
+HEXO:Weak Bearish Inversion. Days since: 5
+ACB.TO:Weak Bullish Inversion. Days since: 8
+MCIG:Weak Bullish Inversion. Days since: 9
+ONDK:Weak Bullish Inversion. Days since: 11
+PWF.TO:Weak Bullish Inversion. Days since: 2
+SSRM.TO:Weak Bullish Inversion. Days since: 20
+SMT.TO:Neutral Inversion. Days since: 1
+MYA.TO:Weak Bearish Inversion. Days since: 17
+PAAS.TO:Weak Bullish Inversion. Days since: 17
+YRI:Weak Bullish Inversion. Days since: 2
+BDRBF:Weak Bullish Inversion. Days since: 11
+BA:Strong Bullish Inversion. Days since: 11
+ARTX:Weak Bullish Inversion. Days since: 10
+AMD:Bearish Inversion. Days since: 4
+NTDOY:Weak Bearish Inversion. Days since: 7
+AAPL:Strong Bullish Inversion. Days since: 12
+MSFT:Bullish Inversion. Days since: 10
+KNTNF:Weak Bearish Inversion. Days since: 9
+MFC.TO:Weak Bullish Inversion. Days since: 2
+CVE.TO:Bullish Inversion. Days since: 2
+VII.TO:Weak Bullish Inversion. Days since: 3
+HBM.TO:Weak Bullish Inversion. Days since: 18
+CRON.TO:Weak Bearish Inversion. Days since: 4
+HSE.TO:Weak Bullish Inversion. Days since: 15
+ECA.TO:Weak Bullish Inversion. Days since: 3
+SES.TO:Weak Bullish Inversion. Days since: 10
+TRST.TO:Weak Bullish Inversion. Days since: 9
+TA.TO:Weak Bearish Inversion. Days since: 2
+ARX.TO:Weak Bullish Inversion. Days since: 3
+TGOD.TO:Neutral Inversion. Days since: 1
+APHA.TO:Weak Bearish Inversion. Days since: 4
+VFF.TO:Weak Bearish Inversion. Days since: 6
+SQQQ:Strong Bearish Inversion. Days since: 10
+YEXT:Weak Bullish Inversion. Days since: 8
