@@ -7,6 +7,7 @@ from datetime import datetime
 from matplotlib.dates import DateFormatter
 from matplotlib.pyplot import figure
 import time
+import os
 
 def get_watchlist():
 	with open("watchlist.txt", "r") as f:    
@@ -199,4 +200,6 @@ finally:
 
 	# Close the file
 	myfile.close()
+
+	os.rename(myfile.name, "./archive/%s" % myfile.name)
 
