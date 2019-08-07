@@ -1,0 +1,55 @@
+XAU.TO:Weak Bearish Inversion. Days since: 2
+GPL:Weak Bearish Inversion. Days since: 3
+TGODF:Weak Bearish Inversion. Days since: 7
+AMRH:Weak Bearish Inversion. Days since: 13
+ARC:Weak Bullish Inversion. Days since: 3
+FUV:Neutral Inversion. Days since: 1
+EFOI:Neutral Inversion. Days since: 1
+ROX:Neutral Inversion. Days since: 1
+LLNW:Weak Bullish Inversion. Days since: 3
+DHXM:Weak Bearish Inversion. Days since: 6
+CHK:Weak Bullish Inversion. Days since: 5
+DNN:Weak Bearish Inversion. Days since: 10
+HEXO:Weak Bearish Inversion. Days since: 7
+ACB.TO:Weak Bearish Inversion. Days since: 9
+MCIG:Weak Bearish Inversion. Days since: 7
+ONDK:Weak Bearish Inversion. Days since: 2
+PWF.TO:Weak Bearish Inversion. Days since: 5
+SSRM.TO:Weak Bullish Inversion. Days since: 13
+SMT.TO:Weak Bullish Inversion. Days since: 9
+MYA.TO:Neutral Inversion. Days since: 1
+PAAS.TO:Neutral Inversion. Days since: 1
+YRI:Weak Bullish Inversion. Days since: 2
+BDRBF:Weak Bullish Inversion. Days since: 4
+BA:Strong Bearish Inversion. Days since: 5
+ARTX:Weak Bullish Inversion. Days since: 6
+AMD:Weak Bearish Inversion. Days since: 9
+NTDOY:Weak Bearish Inversion. Days since: 11
+AAPL:Neutral Inversion. Days since: 1
+MSFT:Weak Bullish Inversion. Days since: 6
+MFC.TO:Weak Bearish Inversion. Days since: 4
+CVE.TO:Weak Bearish Inversion. Days since: 5
+VII.TO:Weak Bearish Inversion. Days since: 4
+HBM.TO:Weak Bearish Inversion. Days since: 4
+CRON.TO:Weak Bearish Inversion. Days since: 2
+HSE.TO:Weak Bearish Inversion. Days since: 12
+ECA.TO:Weak Bearish Inversion. Days since: 3
+SES.TO:Weak Bearish Inversion. Days since: 11
+TRST.TO:Weak Bullish Inversion. Days since: 3
+TA.TO:Weak Bearish Inversion. Days since: 2
+ARX.TO:Weak Bearish Inversion. Days since: 3
+TGOD.TO:Weak Bearish Inversion. Days since: 7
+APHA.TO:Weak Bearish Inversion. Days since: 7
+VFF.TO:Bullish Inversion. Days since: 8
+SQQQ:Weak Bearish Inversion. Days since: 7
+YEXT:Weak Bullish Inversion. Days since: 4
+IIPR:Strong Bearish Inversion. Days since: 13
+SIL:Weak Bearish Inversion. Days since: 3
+SLVP:Weak Bearish Inversion. Days since: 3
+SLV:Weak Bullish Inversion. Days since: 12
+TRIP:Neutral Inversion. Days since: 1
+TSLA:Strong Bearish Inversion. Days since: 4
+CJT.TO:Neutral Inversion. Days since: 1
+NAK:Neutral Inversion. Days since: 1
+AX:Weak Bullish Inversion. Days since: 11
+VIPS:Weak Bullish Inversion. Days since: 5
