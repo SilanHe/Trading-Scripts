@@ -1,0 +1,21 @@
+XAU.TO:Weak Bullish Inversion. Days since: 4
+GPL:Neutral Inversion. Days since: 1
+TGODF:Weak Bullish Inversion. Days since: 8
+AMRH:Neutral Inversion. Days since: 1
+ARC:Weak Bearish Inversion. Days since: 3
+FUV:Weak Bearish Inversion. Days since: 9
+EFOI:Neutral Inversion. Days since: 1
+ROX:Weak Bullish Inversion. Days since: 9
+LLNW:Weak Bearish Inversion. Days since: 4
+DHXM:Neutral Inversion. Days since: 1
+CHK:Weak Bearish Inversion. Days since: 5
+DNN:Neutral Inversion. Days since: 1
+HEXO:Weak Bullish Inversion. Days since: 8
+ACB.TO:Weak Bullish Inversion. Days since: 5
+MCIG:Weak Bullish Inversion. Days since: 6
+ONDK:Neutral Inversion. Days since: 1
+PWF.TO:Weak Bearish Inversion. Days since: 12
+SSRM.TO:Neutral Inversion. Days since: 1
+SMT.TO:Weak Bearish Inversion. Days since: 4
+MYA.TO:Weak Bearish Inversion. Days since: 8
+PAAS.TO:Weak Bullish Inversion. Days since: 4
