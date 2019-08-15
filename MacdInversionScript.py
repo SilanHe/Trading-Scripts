@@ -63,12 +63,13 @@ def get_slope(intersect,macd):
 	elif slope <= -1:
 		return 'Strong Bearish Inversion. Days since: ' + str(time_since)
 
-def generate_graph(data,macd_data,signal_line,ticker):
+def generate_graph(data,macd_data,signal_line,ticker,macd_data_26,signal_line_26):
 	# Get json object with the intraday data and another with  the call's metadata
 
 	# main plot
-	f, (ax1, ax2) = plt.subplots(2, 1, sharex=True)
+	f, (ax1, ax2, ax3) = plt.subplots(3, 1, sharex=True)
 
+	#subplot 1
 	ax1.plot(list(data.index),list(data['4. close']),label='price')
 	plt.title('Daily Time Series for %s' % ticker)
 
@@ -96,7 +97,7 @@ def generate_graph(data,macd_data,signal_line,ticker):
 
 	ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
 
-	# the third plot under
+	# subplot 2
 	ax2.plot(macd_data['MACD'][-100:],label='macd')
 	ax2.plot(signal_line,label='signal line')
 	plt.xticks(fontsize=8, rotation=30)
@@ -124,8 +125,38 @@ def generate_graph(data,macd_data,signal_line,ticker):
 
 	ax2.xaxis.set_major_locator(plt.MaxNLocator(20))
 
+	# subplot 3
+
+	ax3.plot(macd_data_26['MACD'][-100:],label='macd')
+	ax3.plot(signal_line_26,label='signal line')
+	plt.xticks(fontsize=8, rotation=30)
+	plt.grid(True)
+
+
+	# Don't allow the axis to be on top of your data
+	ax3.legend()
+	ax3.set_axisbelow(True)
+
+	# Turn on the minor TICKS, which are required for the minor GRID
+	ax3.minorticks_on()
+
+	# Customize the major grid
+	ax3.grid(which='major', linestyle='-', linewidth='0.5', color='red')
+	# Customize the minor grid
+	# ax.grid(which='minor', linestyle=':', linewidth='0.5', color='black')
+
+	# Turn off the display of all ticks.
+	ax3.tick_params(which='both', # Options for both major and minor ticks
+					top='off', # turn off top ticks
+					left='off', # turn off left ticks
+					right='off',  # turn off right ticks
+					bottom='off') # turn off bottom ticksf
+
+	ax3.xaxis.set_major_locator(plt.MaxNLocator(20))
+
+
 	fig = plt.gcf()
-	fig.set_size_inches(18.5, 10.5)
+	fig.set_size_inches(18.5, 18.5)
 
 	date = datetime.today().strftime('%Y-%m-%d')
 
@@ -157,6 +188,7 @@ ti = TechIndicators(key='HFHLQNBPIUBWH9UF', output_format='pandas')
 tickers = get_watchlist()
 
 k = dict()
+l = dict()
 try:
 
 	for t in tickers:
@@ -165,18 +197,25 @@ try:
 
 		data, meta_data = ts.get_daily(t, outputsize='compact')
 		macd_data, macd_meta_data = ti.get_macd(t,fastperiod=5,slowperiod=35,signalperiod=5)
+		macd_data_26, macd_meta_data_26 = ti.get_macd(t,fastperiod=12,slowperiod=26,signalperiod=9)
 		#calculate custom signal line from the macd
 		signal_line = [ema(list(macd_data['MACD'][-200+i:i]),5) for i in range(-100,0)]
+		signal_line_26 = [ema(list(macd_data_26['MACD'][-200+i:i]),5) for i in range(-100,0)]
 
-		generate_graph(data,macd_data,signal_line,t)
+		generate_graph(data,macd_data,signal_line,t,macd_data_26,signal_line_26)
 
+		#weekly macd indicator
 		intersect = get_intersection(list(macd_data['MACD'][-100:]),signal_line)
 		slope = get_slope(intersect,list(macd_data['MACD'][-100:]))
 		k[t] = slope
 
+		#regular macd indicator
+		intersect_26 = get_intersection(list(macd_data_26['MACD'][-100:]),signal_line_26)
+		slope_26 = get_slope(intersect_26,list(macd_data_26['MACD'][-100:]))
+		l[t] = slope_26
 
 		#not go over the threshold number of request a minute
-		time.sleep(30)
+		time.sleep(60)
 except KeyError:
 	print("ERROR: KeyError")
 
@@ -185,7 +224,9 @@ finally:
 	# Filename to append
 	date = datetime.today().strftime('%Y-%m-%d')
 
-	filename = "watchlist-%s.txt" % date
+	# for the 'weekly' macd indicator
+
+	filename = "watchlist_35-%s.txt" % date
 
 	# The 'a' flag tells Python to keep the file contents
 	# and append (add line) at the end of the file.
@@ -194,6 +235,28 @@ finally:
 	#convert my data to string
 	# sorted_k = sorted(k.items(), key=lambda kv: kv[1])
 	content = '\n'.join("{!s}:{!s}".format(key,val) for (key,val) in k.items())
+
+	# Add the line
+	myfile.write(content)
+
+	# Close the file
+	myfile.close()
+
+	os.rename(myfile.name, "./archive/%s" % myfile.name)
+
+	#for the common macd indicator
+	#
+	#
+
+	filename = "watchlist_26-%s.txt" % date
+
+	# The 'a' flag tells Python to keep the file contents
+	# and append (add line) at the end of the file.
+	myfile = open(filename, 'w')
+
+	#convert my data to string
+	# sorted_k = sorted(k.items(), key=lambda kv: kv[1])
+	content = '\n'.join("{!s}:{!s}".format(key,val) for (key,val) in l.items())
 
 	# Add the line
 	myfile.write(content)
