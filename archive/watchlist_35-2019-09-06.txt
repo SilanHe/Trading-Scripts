@@ -1,0 +1,49 @@
+XAU.TO:Weak Bearish Inversion. Days since: 19
+GPL:Neutral Inversion. Days since: 1
+TGODF:Weak Bearish Inversion. Days since: 3
+AMRH:Weak Bullish Inversion. Days since: 3
+ARC:Weak Bullish Inversion. Days since: 9
+FUV:Weak Bullish Inversion. Days since: 5
+EFOI:Neutral Inversion. Days since: 1
+ROX:Weak Bullish Inversion. Days since: 12
+LLNW:Weak Bullish Inversion. Days since: 7
+DHXM:Weak Bullish Inversion. Days since: 5
+CHK:Weak Bullish Inversion. Days since: 3
+DNN:Weak Bullish Inversion. Days since: 5
+HEXO:Weak Bullish Inversion. Days since: 5
+ACB.TO:Weak Bullish Inversion. Days since: 4
+MCIG:Weak Bearish Inversion. Days since: 16
+ONDK:Weak Bullish Inversion. Days since: 15
+PWF.TO:Weak Bullish Inversion. Days since: 14
+BDRBF:Weak Bullish Inversion. Days since: 13
+BA:Strong Bullish Inversion. Days since: 15
+AMD:Weak Bullish Inversion. Days since: 6
+NTDOY:Weak Bullish Inversion. Days since: 4
+AAPL:Bullish Inversion. Days since: 3
+MSFT:Bullish Inversion. Days since: 6
+MFC.TO:Weak Bullish Inversion. Days since: 6
+CVE.TO:Weak Bullish Inversion. Days since: 12
+VII.TO:Weak Bullish Inversion. Days since: 6
+HBM.TO:Weak Bullish Inversion. Days since: 15
+CRON.TO:Weak Bullish Inversion. Days since: 5
+HSE.TO:Weak Bullish Inversion. Days since: 15
+ECA.TO:Weak Bullish Inversion. Days since: 8
+SES.TO:Weak Bullish Inversion. Days since: 5
+TRST.TO:Weak Bullish Inversion. Days since: 11
+TA.TO:Weak Bullish Inversion. Days since: 6
+APHA:Weak Bullish Inversion. Days since: 4
+VFF.TO:Weak Bullish Inversion. Days since: 3
+SQQQ:Bearish Inversion. Days since: 7
+YEXT:Neutral Inversion. Days since: 1
+SIL:Neutral Inversion. Days since: 1
+SLVP:Neutral Inversion. Days since: 1
+SLV:Neutral Inversion. Days since: 1
+TRIP:Bullish Inversion. Days since: 6
+TSLA:Strong Bullish Inversion. Days since: 6
+CJT.TO:Weak Bearish Inversion. Days since: 2
+NAK:Weak Bearish Inversion. Days since: 3
+AX:Weak Bullish Inversion. Days since: 3
+VIPS:Weak Bullish Inversion. Days since: 16
+IBM:Bullish Inversion. Days since: 7
+AQN.TO:Weak Bullish Inversion. Days since: 5
+JNJ:Weak Bullish Inversion. Days since: 4
